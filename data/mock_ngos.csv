@@ -1,11 +1,21 @@
-ngo_name,location,capacity,accepted_categories
-Unity Organization,Delhi,414,Dairy|Fruit
-Lighthouse Organization,Chennai,277,Vegetable|Fruit|FrozenDessert
-Rainbow Project,Mumbai,489,Fruit|Seafood|Meat|Dairy
-Care Trust,Kolkata,302,Bakery|FrozenDessert|Fruit
-Hope Foundation,Kolkata,375,Seafood|Fruit|Bakery|Pantry
-Helping Organization,Chennai,61,Vegetable|Pantry|Fruit|FrozenDessert
-Lighthouse Association,Mumbai,454,Fruit|Vegetable|Dairy
-Helping Trust,Kolkata,387,Seafood|Fruit|FrozenDessert|Vegetable
-Rainbow Mission,Kolkata,457,Pantry|FrozenDessert
-Care Cares,Kolkata,239,FrozenDessert|Bakery
+ngo_id,ngo_name,location,latitude,longitude,capacity_kg,accepted_categories
+NGO-101,"Bhalla, Arora and Shanker Foundation",Mumbai,18.9981,72.8369,153,Meat|Pantry|Vegetable|Bakery
+NGO-102,Das-Choudhury Foundation,Bangalore,12.9034,77.5773,444,Seafood|Pantry|Dairy
+NGO-103,Shan Inc Foundation,Bangalore,13.0472,77.6862,165,FrozenDessert|Vegetable|Seafood|Dairy
+NGO-104,"Shanker, Walla and Mahajan Foundation",Kolkata,22.5731,88.4189,115,Dairy|Pantry|Vegetable|Bakery
+NGO-105,Rajagopal Group Foundation,Chennai,12.9864,80.2051,165,Fruit|FrozenDessert
+NGO-106,Aurora Inc Foundation,Mumbai,19.0262,72.918,428,Seafood|Pantry
+NGO-107,Dada PLC Foundation,Kolkata,22.6625,88.2891,288,Pantry|Bakery|Seafood|Meat
+NGO-108,"Arya, Mand and Chaudhary Foundation",Bangalore,12.9793,77.635,96,Vegetable|FrozenDessert
+NGO-109,"Sachar, Sarna and Mahajan Foundation",Kolkata,22.5611,88.339,383,Dairy|Seafood|Pantry|Bakery|FrozenDessert
+NGO-110,Choudhary-Kapur Foundation,Kolkata,22.5327,88.2774,479,FrozenDessert|Pantry|Bakery
+NGO-111,"Dewan, Tailor and Virk Foundation",Chennai,13.0963,80.2984,60,Fruit|Bakery|Seafood
+NGO-112,Sibal and Sons Foundation,Mumbai,19.1381,72.8847,416,Pantry|Bakery|Dairy|Meat
+NGO-113,"Kakar, Garde and Dewan Foundation",Mumbai,19.1537,72.9586,173,Bakery|Pantry|FrozenDessert
+NGO-114,Chokshi LLC Foundation,Chennai,13.0785,80.3115,487,Vegetable|Seafood|Meat|Pantry|Fruit
+NGO-115,Batra Group Foundation,Kolkata,22.6447,88.4072,94,Pantry|Fruit|Dairy|FrozenDessert|Bakery
+NGO-116,Gola LLC Foundation,Delhi,28.6767,77.1412,291,Meat|Fruit|FrozenDessert
+NGO-117,"Deo, Swamy and Bains Foundation",Mumbai,19.0893,72.926,403,Vegetable|Dairy|FrozenDessert|Bakery|Fruit
+NGO-118,"Karpe, Loyal and Bhatia Foundation",Chennai,13.156,80.3518,93,FrozenDessert|Bakery
+NGO-119,Baral-Majumdar Foundation,Chennai,13.1723,80.2837,304,Fruit|FrozenDessert|Seafood|Vegetable
+NGO-120,Thakkar-Ratti Foundation,Bangalore,12.9219,77.6725,235,Bakery|Meat|Pantry|Seafood
