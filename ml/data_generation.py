@@ -36,55 +36,116 @@ PRODUCT_PROFILES = [
     {"product": "Eggs", "category": "Dairy", "storage_type": "Refrigerated", "temp_range": (1, 4), "humidity_range": (80, 85), "shelf_life_days": (21, 30)}
 ]
 
+# Define seasonal patterns
+SEASONS = {
+    "Summer": {
+        "months": [3, 4, 5],  # March to May in India
+        "temp_modifier": 5,
+        "humidity_modifier": 15,
+        "high_demand": ["Ice Cream", "Banana", "Fish"],
+        "low_demand": ["Bread", "Milk"]
+    },
+    "Monsoon": {
+        "months": [6, 7, 8],  # June to August
+        "temp_modifier": -2,
+        "humidity_modifier": 30,
+        "high_demand": ["Bread", "Milk", "Canned Beans"],
+        "low_demand": ["Ice Cream"]
+    },
+    "Winter": {
+        "months": [11, 12, 1],  # November to January
+        "temp_modifier": -5,
+        "humidity_modifier": -20,
+        "high_demand": ["Milk", "Bread", "Chicken"],
+        "low_demand": ["Ice Cream", "Fish"]
+    }
+}
+
+# Enhanced store characteristics
+STORE_PROFILES = {
+    "premium": {
+        "equipment_quality": (4, 5),  # Range of possible values
+        "temp_variance": 1.5,
+        "humidity_variance": 5,
+        "storage_capacity": (200, 400),
+        "staff_count": (15, 25)
+    },
+    "standard": {
+        "equipment_quality": (3, 4),
+        "temp_variance": 2.5,
+        "humidity_variance": 8,
+        "storage_capacity": (100, 200),
+        "staff_count": (8, 15)
+    },
+    "budget": {
+        "equipment_quality": (2, 3),
+        "temp_variance": 3.5,
+        "humidity_variance": 12,
+        "storage_capacity": (50, 100),
+        "staff_count": (4, 8)
+    }
+}
+
+# Business hours and peak times
+BUSINESS_HOURS = {
+    "weekday": {"open": 9, "close": 21, "peaks": [(9, 11), (17, 19)]},
+    "weekend": {"open": 10, "close": 22, "peaks": [(11, 13), (16, 20)]}
+}
+
 # --- FUNCTION DEFINITIONS ---
 
 def generate_inventory_data(num_rows=500):
-    """Generates mock inventory data with spoilage risk factors."""
+    """Generates mock inventory data with realistic patterns and risk factors."""
     inventory_data = []
-    current_date = datetime.now().date()
+    current_date = datetime.now()
 
     for i in range(num_rows):
-        profile = random.choice(PRODUCT_PROFILES)
+        # Product selection with seasonal weighting
+        season, season_details = get_current_season(current_date)
+        if season_details and random.random() < 0.7:  # 70% chance of seasonal influence
+            # Prioritize high-demand seasonal products
+            seasonal_products = [p for p in PRODUCT_PROFILES if p["product"] in season_details["high_demand"]]
+            profile = random.choice(seasonal_products if seasonal_products else PRODUCT_PROFILES)
+        else:
+            profile = random.choice(PRODUCT_PROFILES)
+
+        # Location and store selection
         location_name = random.choice(list(LOCATIONS.keys()))
         location_details = LOCATIONS[location_name]
+        store_id = random.choice(location_details["stores"])
+        store_profile = get_store_profile(store_id)
 
         # Product and store info
         product = profile["product"]
         category = profile["category"]
         storage = profile["storage_type"]
-        store_id = random.choice(location_details["stores"])
         
         # Add small random offset to lat/lon to simulate different store locations within a city
         lat = location_details["lat"] + random.uniform(-0.05, 0.05)
         lon = location_details["lon"] + random.uniform(-0.05, 0.05)
 
-        # Random stock date and expiry date based on shelf life
-        stock_days_ago = random.randint(0, 30)
+        # More realistic stock date generation based on product type and store profile
+        max_stock_age = 7 if category in ["Bakery", "Dairy"] else 30
+        stock_days_ago = int(random.triangular(0, max_stock_age, max_stock_age * 0.3))
         stock_date = current_date - timedelta(days=stock_days_ago)
-        shelf_min, shelf_max = profile["shelf_life_days"]
-        chosen_life = random.randint(shelf_min, shelf_max)
-        expiry_date = stock_date + timedelta(days=chosen_life)
-
-        # Simulate environment conditions with some deviation
-        min_temp, max_temp = profile["temp_range"]
-        avg_temp = (min_temp + max_temp) / 2
-        temp = random.gauss(avg_temp, 3)  # Gaussian distribution around the average
-        temp = round(max(min(temp, 50), -30), 1)
-
-        min_hum, max_hum = profile["humidity_range"]
-        avg_hum = (min_hum + max_hum) / 2
-        hum = random.gauss(avg_hum, 10)
-        hum = round(max(min(hum, 100), 0), 1)
-
-        # Simplified spoilage risk calculation
-        days_on_shelf = (current_date - stock_date).days
-        time_risk = min(days_on_shelf / chosen_life, 1.0)
         
-        temp_deviation = max(0, temp - max_temp) + max(0, min_temp - temp)
-        temp_risk = min(temp_deviation / 10, 1.0) # Assume 10 degrees deviation is max risk
+        # Shelf life calculation with store quality influence
+        shelf_min, shelf_max = profile["shelf_life_days"]
+        quality_modifier = STORE_PROFILES[store_profile]["equipment_quality"][0] / 5.0
+        adjusted_shelf_life = int(random.uniform(shelf_min, shelf_max) * quality_modifier)
+        expiry_date = stock_date + timedelta(days=adjusted_shelf_life)
 
-        # Combine risks and determine spoilage label (probabilistic)
-        total_risk = 0.6 * time_risk + 0.4 * temp_risk
+        # Generate environmental conditions with seasonal and store quality effects
+        temp, hum = generate_environmental_conditions(profile, store_profile, current_date)
+
+        # Calculate sophisticated spoilage risk
+        days_on_shelf = (current_date.date() - stock_date.date()).days
+        total_risk = calculate_spoilage_risk(profile, temp, hum, days_on_shelf, store_profile)
+        
+        # Apply demand-based modifications
+        demand_modifier = calculate_demand_modifier(current_date, product, store_profile)
+        total_risk *= (2 - demand_modifier)  # Higher demand = lower risk due to faster turnover
+        
         spoilage_label = 1 if random.random() < total_risk else 0
 
         inventory_data.append({
@@ -139,6 +200,118 @@ def write_csv(file_path, data, headers):
         writer.writeheader()
         writer.writerows(data)
     print(f"Successfully generated {file_path}")
+
+def get_current_season(date):
+    """Determine the current season based on the date."""
+    month = date.month
+    for season, details in SEASONS.items():
+        if month in details["months"]:
+            return season, details
+    return "Regular", None
+
+def get_store_profile(store_id):
+    """Assign store profile based on store ID pattern."""
+    if store_id.endswith("01"):  # First stores in each city are premium
+        return "premium"
+    elif store_id.endswith("02"):  # Second stores are standard
+        return "standard"
+    return "budget"  # Rest are budget stores
+
+def calculate_demand_modifier(date, product, store_profile):
+    """Calculate demand modifier based on various factors."""
+    weekday = date.weekday()
+    hour = date.hour if isinstance(date, datetime) else 12
+    
+    # Base modifier
+    modifier = 1.0
+    
+    # Weekend boost
+    if weekday >= 5:
+        modifier *= 1.3
+    
+    # Peak hours boost
+    business_hours = BUSINESS_HOURS["weekend" if weekday >= 5 else "weekday"]
+    for peak_start, peak_end in business_hours["peaks"]:
+        if peak_start <= hour <= peak_end:
+            modifier *= 1.4
+            break
+    
+    # Seasonal effects
+    season, season_details = get_current_season(date)
+    if season_details:
+        if product in season_details["high_demand"]:
+            modifier *= 1.5
+        elif product in season_details["low_demand"]:
+            modifier *= 0.7
+    
+    # Store profile effects
+    if store_profile == "premium":
+        modifier *= 1.2
+    elif store_profile == "budget":
+        modifier *= 0.8
+    
+    return modifier
+
+def generate_environmental_conditions(profile, store_profile, date):
+    """Generate realistic environmental conditions based on multiple factors."""
+    min_temp, max_temp = profile["temp_range"]
+    min_hum, max_hum = profile["humidity_range"]
+    
+    # Get base values
+    base_temp = (min_temp + max_temp) / 2
+    base_hum = (min_hum + max_hum) / 2
+    
+    # Apply seasonal modifications
+    season, season_details = get_current_season(date)
+    if season_details:
+        base_temp += season_details["temp_modifier"]
+        base_hum += season_details["humidity_modifier"]
+    
+    # Apply store quality effects
+    store_quality = STORE_PROFILES[store_profile]
+    temp_variance = store_quality["temp_variance"]
+    hum_variance = store_quality["humidity_variance"]
+    
+    # Generate final values with controlled randomness
+    temp = random.gauss(base_temp, temp_variance)
+    hum = random.gauss(base_hum, hum_variance)
+    
+    # Ensure values stay within realistic bounds
+    temp = max(min(temp, 50), -30)
+    hum = max(min(hum, 100), 0)
+    
+    return round(temp, 1), round(hum, 1)
+
+def calculate_spoilage_risk(product_profile, temp, humidity, days_on_shelf, store_profile):
+    """Calculate sophisticated spoilage risk based on multiple factors."""
+    # Base time risk
+    shelf_min, shelf_max = product_profile["shelf_life_days"]
+    time_risk = days_on_shelf / shelf_max
+    
+    # Temperature deviation risk
+    min_temp, max_temp = product_profile["temp_range"]
+    temp_deviation = max(0, temp - max_temp) + max(0, min_temp - temp)
+    temp_risk = min(temp_deviation / 10, 1.0)
+    
+    # Humidity deviation risk
+    min_hum, max_hum = product_profile["humidity_range"]
+    hum_deviation = max(0, humidity - max_hum) + max(0, min_hum - humidity)
+    hum_risk = min(hum_deviation / 20, 1.0)
+    
+    # Store quality impact
+    store_quality = STORE_PROFILES[store_profile]["equipment_quality"][0]
+    quality_factor = (6 - store_quality) / 5
+    
+    # Combine risks with weights
+    total_risk = (
+        0.35 * time_risk +
+        0.25 * temp_risk +
+        0.20 * hum_risk +
+        0.15 * quality_factor +
+        0.05 * random.random()  # Small random factor
+    )
+    
+    return min(1.0, total_risk)
 
 # --- MAIN EXECUTION ---
 
