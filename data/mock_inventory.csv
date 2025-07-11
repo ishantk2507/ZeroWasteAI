@@ -1,0 +1,301 @@
+product,category,stock_date,storage_type,store_location,temperature,humidity,expiry_date,spoilage
+Canned Beans,Pantry,2025-07-06,Ambient,Kolkata,13.1,32.8,2027-02-25,0
+Ice Cream,FrozenDessert,2025-07-09,Frozen,Bangalore,-20.4,51.4,2026-03-09,0
+Canned Beans,Pantry,2025-06-26,Ambient,Bangalore,17.7,51.3,2026-12-10,0
+Ice Cream,FrozenDessert,2025-06-22,Frozen,Delhi,-21.6,50.5,2026-03-05,0
+Apple,Fruit,2025-07-02,Refrigerated,Bangalore,3.2,82.2,2025-07-27,0
+Bread,Bakery,2025-06-24,Ambient,Kolkata,22.6,59.1,2025-06-29,1
+Apple,Fruit,2025-06-21,Refrigerated,Mumbai,4.3,98.8,2025-07-19,0
+Milk,Dairy,2025-06-30,Refrigerated,Bangalore,7.1,87.5,2025-07-12,1
+Eggs,Dairy,2025-07-01,Refrigerated,Kolkata,3.7,80.8,2025-07-29,0
+Bread,Bakery,2025-07-04,Ambient,Chennai,27.3,64.9,2025-07-09,0
+Eggs,Dairy,2025-07-08,Refrigerated,Bangalore,-3.5,86.9,2025-08-05,0
+Bread,Bakery,2025-06-15,Ambient,Mumbai,21.1,69.6,2025-06-19,0
+Canned Beans,Pantry,2025-06-14,Ambient,Kolkata,16.6,50.8,2027-02-28,0
+Carrots,Vegetable,2025-06-28,Refrigerated,Chennai,2.1,92.9,2025-07-17,1
+Bread,Bakery,2025-06-26,Ambient,Delhi,17.0,50.9,2025-06-29,0
+Bread,Bakery,2025-07-10,Ambient,Mumbai,15.4,66.4,2025-07-13,0
+Fish,Seafood,2025-07-07,Frozen,Bangalore,-15.6,73.6,2025-08-13,0
+Eggs,Dairy,2025-06-30,Refrigerated,Chennai,0.7,100,2025-07-26,1
+Banana,Fruit,2025-07-02,Ambient,Bangalore,12.1,59.3,2025-07-05,1
+Eggs,Dairy,2025-06-29,Refrigerated,Kolkata,-5.7,84.8,2025-07-23,1
+Carrots,Vegetable,2025-06-15,Refrigerated,Delhi,1.8,81.9,2025-07-01,0
+Carrots,Vegetable,2025-06-20,Refrigerated,Chennai,0.3,100,2025-07-20,0
+Banana,Fruit,2025-07-03,Ambient,Mumbai,15.1,60.9,2025-07-07,1
+Chicken,Meat,2025-06-28,Refrigerated,Delhi,3.4,95.5,2025-07-08,1
+Fish,Seafood,2025-07-01,Frozen,Kolkata,-19.1,75.0,2025-08-12,0
+Bread,Bakery,2025-06-27,Ambient,Delhi,19.9,55.6,2025-07-02,1
+Canned Beans,Pantry,2025-06-11,Ambient,Chennai,28.7,56.7,2027-01-22,0
+Banana,Fruit,2025-06-21,Ambient,Kolkata,12.9,59.5,2025-06-26,1
+Fish,Seafood,2025-06-18,Frozen,Chennai,-19.2,61.9,2025-07-30,1
+Bread,Bakery,2025-07-05,Ambient,Kolkata,19.0,54.4,2025-07-09,0
+Fish,Seafood,2025-06-14,Frozen,Delhi,-13.4,87.7,2025-07-20,1
+Carrots,Vegetable,2025-06-14,Refrigerated,Delhi,-0.2,80.4,2025-07-10,1
+Carrots,Vegetable,2025-07-02,Refrigerated,Delhi,1.8,87.9,2025-07-26,0
+Banana,Fruit,2025-06-20,Ambient,Delhi,15.1,76.1,2025-06-26,1
+Apple,Fruit,2025-06-23,Refrigerated,Kolkata,8.2,91.0,2025-07-15,1
+Fish,Seafood,2025-06-18,Frozen,Delhi,-19.2,71.8,2025-08-10,1
+Chicken,Meat,2025-06-26,Refrigerated,Kolkata,10.8,100,2025-07-05,1
+Banana,Fruit,2025-06-26,Ambient,Kolkata,20.0,79.9,2025-07-03,1
+Banana,Fruit,2025-07-03,Ambient,Mumbai,18.8,73.3,2025-07-09,1
+Carrots,Vegetable,2025-07-08,Refrigerated,Bangalore,4.7,100,2025-07-26,0
+Apple,Fruit,2025-06-24,Refrigerated,Kolkata,3.9,95.2,2025-07-19,0
+Banana,Fruit,2025-06-17,Ambient,Kolkata,22.3,71.6,2025-06-22,0
+Milk,Dairy,2025-06-16,Refrigerated,Delhi,4.1,83.2,2025-06-30,0
+Milk,Dairy,2025-06-11,Refrigerated,Delhi,-5.5,82.0,2025-06-23,1
+Bread,Bakery,2025-06-19,Ambient,Mumbai,25.1,49.0,2025-06-24,1
+Canned Beans,Pantry,2025-07-04,Ambient,Delhi,9.7,40.3,2027-02-24,0
+Carrots,Vegetable,2025-06-16,Refrigerated,Delhi,5.1,82.0,2025-07-05,1
+Canned Beans,Pantry,2025-07-07,Ambient,Kolkata,21.2,29.6,2026-07-08,0
+Banana,Fruit,2025-06-23,Ambient,Mumbai,15.1,64.7,2025-06-30,1
+Fish,Seafood,2025-06-19,Frozen,Mumbai,-17.6,73.2,2025-08-05,1
+Bread,Bakery,2025-07-09,Ambient,Chennai,33.5,64.0,2025-07-13,1
+Banana,Fruit,2025-06-18,Ambient,Mumbai,23.9,81.3,2025-06-21,1
+Ice Cream,FrozenDessert,2025-07-07,Frozen,Delhi,-24.1,62.2,2026-01-19,0
+Banana,Fruit,2025-06-11,Ambient,Mumbai,20.6,65.3,2025-06-14,0
+Bread,Bakery,2025-06-25,Ambient,Bangalore,24.7,45.0,2025-06-28,0
+Fish,Seafood,2025-06-18,Frozen,Mumbai,-18.4,98.4,2025-08-12,1
+Eggs,Dairy,2025-07-10,Refrigerated,Delhi,0.8,91.3,2025-07-31,0
+Bread,Bakery,2025-07-10,Ambient,Bangalore,25.4,51.7,2025-07-13,0
+Chicken,Meat,2025-07-08,Refrigerated,Mumbai,-1.9,92.2,2025-07-13,1
+Eggs,Dairy,2025-06-19,Refrigerated,Bangalore,4.5,80.4,2025-07-19,0
+Apple,Fruit,2025-06-15,Refrigerated,Mumbai,-0.1,95.7,2025-07-05,0
+Milk,Dairy,2025-06-20,Refrigerated,Bangalore,3.7,90.3,2025-07-01,1
+Canned Beans,Pantry,2025-06-21,Ambient,Delhi,8.0,40.9,2026-10-31,0
+Fish,Seafood,2025-06-11,Frozen,Bangalore,-20.7,76.2,2025-07-12,0
+Canned Beans,Pantry,2025-07-02,Ambient,Delhi,13.4,49.4,2027-01-28,0
+Canned Beans,Pantry,2025-06-17,Ambient,Kolkata,13.4,41.4,2027-06-15,0
+Carrots,Vegetable,2025-06-16,Refrigerated,Bangalore,-0.1,84.7,2025-07-09,1
+Canned Beans,Pantry,2025-06-15,Ambient,Delhi,16.0,37.5,2026-10-19,1
+Chicken,Meat,2025-06-12,Refrigerated,Chennai,5.2,88.9,2025-06-21,0
+Banana,Fruit,2025-07-04,Ambient,Kolkata,29.2,84.2,2025-07-11,1
+Fish,Seafood,2025-07-10,Frozen,Mumbai,-19.8,69.1,2025-08-19,1
+Carrots,Vegetable,2025-07-11,Refrigerated,Kolkata,0.3,80.7,2025-07-27,0
+Bread,Bakery,2025-06-27,Ambient,Bangalore,18.9,50.9,2025-07-01,1
+Banana,Fruit,2025-07-11,Ambient,Kolkata,14.6,64.0,2025-07-16,0
+Ice Cream,FrozenDessert,2025-06-19,Frozen,Chennai,-23.4,70.4,2026-06-04,0
+Banana,Fruit,2025-06-27,Ambient,Bangalore,13.4,65.8,2025-07-04,1
+Banana,Fruit,2025-07-06,Ambient,Bangalore,24.5,64.1,2025-07-09,1
+Fish,Seafood,2025-07-08,Frozen,Mumbai,-18.8,62.6,2025-08-23,0
+Canned Beans,Pantry,2025-06-18,Ambient,Delhi,14.3,57.6,2026-11-09,1
+Milk,Dairy,2025-06-22,Refrigerated,Bangalore,0.3,95.0,2025-07-04,0
+Ice Cream,FrozenDessert,2025-06-11,Frozen,Bangalore,-24.1,56.9,2026-03-07,0
+Banana,Fruit,2025-06-16,Ambient,Mumbai,24.5,64.4,2025-06-22,1
+Carrots,Vegetable,2025-07-06,Refrigerated,Delhi,2.7,87.1,2025-07-29,0
+Milk,Dairy,2025-06-23,Refrigerated,Bangalore,4.7,87.5,2025-07-04,1
+Fish,Seafood,2025-06-26,Frozen,Bangalore,-15.6,73.1,2025-08-18,1
+Ice Cream,FrozenDessert,2025-06-20,Frozen,Mumbai,-20.0,63.4,2026-02-11,0
+Apple,Fruit,2025-06-20,Refrigerated,Mumbai,-1.5,88.0,2025-07-18,1
+Carrots,Vegetable,2025-06-26,Refrigerated,Delhi,1.7,84.4,2025-07-20,1
+Chicken,Meat,2025-07-11,Refrigerated,Mumbai,3.6,65.6,2025-07-20,1
+Ice Cream,FrozenDessert,2025-06-30,Frozen,Mumbai,-20.8,57.0,2026-04-07,0
+Eggs,Dairy,2025-06-11,Refrigerated,Mumbai,0.5,78.8,2025-07-06,1
+Bread,Bakery,2025-06-25,Ambient,Delhi,21.8,58.6,2025-06-30,1
+Carrots,Vegetable,2025-07-01,Refrigerated,Kolkata,-5.5,78.7,2025-07-16,1
+Banana,Fruit,2025-07-04,Ambient,Chennai,17.8,53.2,2025-07-07,0
+Eggs,Dairy,2025-07-10,Refrigerated,Bangalore,7.4,77.4,2025-08-02,1
+Eggs,Dairy,2025-06-15,Refrigerated,Kolkata,3.5,88.5,2025-07-13,1
+Apple,Fruit,2025-07-02,Refrigerated,Chennai,2.4,95.8,2025-07-24,0
+Bread,Bakery,2025-07-02,Ambient,Kolkata,10.4,71.6,2025-07-06,1
+Fish,Seafood,2025-07-05,Frozen,Bangalore,-18.6,62.8,2025-08-12,0
+Ice Cream,FrozenDessert,2025-07-10,Frozen,Chennai,-24.2,48.6,2026-05-02,0
+Fish,Seafood,2025-06-21,Frozen,Bangalore,-17.2,74.4,2025-08-07,0
+Chicken,Meat,2025-07-05,Refrigerated,Bangalore,-1.4,98.3,2025-07-15,0
+Apple,Fruit,2025-06-18,Refrigerated,Delhi,4.4,81.5,2025-07-13,1
+Ice Cream,FrozenDessert,2025-07-10,Frozen,Bangalore,-20.1,53.3,2026-01-21,0
+Bread,Bakery,2025-06-25,Ambient,Kolkata,24.8,71.5,2025-06-29,1
+Fish,Seafood,2025-06-17,Frozen,Kolkata,-18.4,80.4,2025-07-23,1
+Ice Cream,FrozenDessert,2025-06-18,Frozen,Chennai,-21.0,60.6,2026-06-04,0
+Carrots,Vegetable,2025-06-13,Refrigerated,Delhi,2.7,87.8,2025-07-01,1
+Banana,Fruit,2025-06-30,Ambient,Bangalore,18.6,67.0,2025-07-07,0
+Banana,Fruit,2025-07-03,Ambient,Chennai,23.7,61.4,2025-07-10,1
+Eggs,Dairy,2025-06-11,Refrigerated,Delhi,2.0,93.1,2025-07-07,1
+Eggs,Dairy,2025-07-02,Refrigerated,Delhi,5.4,76.8,2025-07-27,1
+Apple,Fruit,2025-06-16,Refrigerated,Chennai,5.3,74.2,2025-07-09,0
+Bread,Bakery,2025-06-20,Ambient,Kolkata,19.5,52.2,2025-06-24,0
+Canned Beans,Pantry,2025-06-22,Ambient,Mumbai,15.6,41.4,2027-01-23,0
+Apple,Fruit,2025-06-19,Refrigerated,Bangalore,-0.9,93.6,2025-07-19,1
+Banana,Fruit,2025-06-11,Ambient,Chennai,21.4,50.6,2025-06-14,0
+Canned Beans,Pantry,2025-07-09,Ambient,Delhi,20.9,54.6,2026-08-17,0
+Bread,Bakery,2025-06-14,Ambient,Kolkata,15.8,68.8,2025-06-18,0
+Chicken,Meat,2025-06-19,Refrigerated,Bangalore,1.6,80.4,2025-06-26,0
+Banana,Fruit,2025-07-04,Ambient,Chennai,20.3,61.8,2025-07-07,1
+Chicken,Meat,2025-07-05,Refrigerated,Bangalore,2.8,93.2,2025-07-13,0
+Banana,Fruit,2025-06-15,Ambient,Mumbai,14.1,61.5,2025-06-21,1
+Ice Cream,FrozenDessert,2025-06-28,Frozen,Mumbai,-23.9,46.1,2026-05-28,0
+Fish,Seafood,2025-06-17,Frozen,Bangalore,-16.8,76.9,2025-07-19,0
+Milk,Dairy,2025-06-24,Refrigerated,Mumbai,1.6,87.8,2025-07-04,0
+Chicken,Meat,2025-07-01,Refrigerated,Mumbai,2.4,84.5,2025-07-08,0
+Canned Beans,Pantry,2025-07-06,Ambient,Delhi,18.8,23.4,2026-12-16,0
+Banana,Fruit,2025-06-19,Ambient,Mumbai,18.1,85.7,2025-06-22,1
+Chicken,Meat,2025-07-06,Refrigerated,Chennai,2.8,100,2025-07-16,0
+Apple,Fruit,2025-07-03,Refrigerated,Kolkata,-0.8,84.5,2025-07-29,0
+Carrots,Vegetable,2025-06-11,Refrigerated,Bangalore,-1.8,90.2,2025-06-27,1
+Carrots,Vegetable,2025-06-19,Refrigerated,Delhi,-1.6,95.9,2025-07-17,1
+Bread,Bakery,2025-06-21,Ambient,Chennai,29.6,58.3,2025-06-24,1
+Chicken,Meat,2025-06-24,Refrigerated,Bangalore,1.0,100,2025-07-03,1
+Canned Beans,Pantry,2025-06-15,Ambient,Delhi,12.9,31.0,2027-05-29,0
+Chicken,Meat,2025-06-26,Refrigerated,Kolkata,-1.6,85.8,2025-07-04,0
+Eggs,Dairy,2025-07-10,Refrigerated,Delhi,3.6,90.4,2025-08-06,1
+Canned Beans,Pantry,2025-07-08,Ambient,Chennai,17.9,35.7,2026-09-30,0
+Eggs,Dairy,2025-06-21,Refrigerated,Chennai,0.2,74.4,2025-07-18,1
+Banana,Fruit,2025-06-21,Ambient,Mumbai,12.8,75.7,2025-06-24,1
+Bread,Bakery,2025-06-28,Ambient,Bangalore,19.0,61.5,2025-07-01,0
+Chicken,Meat,2025-06-17,Refrigerated,Delhi,0.8,93.8,2025-06-27,0
+Eggs,Dairy,2025-07-09,Refrigerated,Bangalore,2.4,76.3,2025-08-05,1
+Milk,Dairy,2025-06-11,Refrigerated,Chennai,0.3,100,2025-06-26,0
+Banana,Fruit,2025-06-25,Ambient,Delhi,15.8,73.4,2025-06-28,0
+Milk,Dairy,2025-07-01,Refrigerated,Kolkata,1.0,77.9,2025-07-13,1
+Canned Beans,Pantry,2025-07-05,Ambient,Bangalore,13.7,58.5,2026-09-28,0
+Carrots,Vegetable,2025-07-03,Refrigerated,Mumbai,2.0,100,2025-07-29,1
+Carrots,Vegetable,2025-06-15,Refrigerated,Kolkata,-1.6,70.3,2025-07-04,1
+Milk,Dairy,2025-07-06,Refrigerated,Bangalore,6.4,86.7,2025-07-17,1
+Milk,Dairy,2025-07-07,Refrigerated,Delhi,3.8,64.8,2025-07-20,1
+Chicken,Meat,2025-06-27,Refrigerated,Mumbai,4.3,88.5,2025-07-03,1
+Canned Beans,Pantry,2025-06-12,Ambient,Mumbai,25.2,37.7,2026-11-24,0
+Fish,Seafood,2025-07-09,Frozen,Chennai,-16.2,91.0,2025-08-13,0
+Fish,Seafood,2025-06-11,Frozen,Delhi,-21.6,67.4,2025-07-21,0
+Carrots,Vegetable,2025-06-22,Refrigerated,Mumbai,7.5,100.0,2025-07-13,1
+Ice Cream,FrozenDessert,2025-06-25,Frozen,Mumbai,-19.7,59.9,2026-03-15,0
+Milk,Dairy,2025-07-02,Refrigerated,Delhi,6.3,77.4,2025-07-15,1
+Canned Beans,Pantry,2025-06-28,Ambient,Chennai,29.2,63.3,2027-04-01,1
+Fish,Seafood,2025-06-29,Frozen,Mumbai,-13.6,83.4,2025-08-15,1
+Canned Beans,Pantry,2025-07-09,Ambient,Chennai,10.8,38.1,2026-12-06,0
+Milk,Dairy,2025-07-09,Refrigerated,Chennai,0.3,80.2,2025-07-22,0
+Carrots,Vegetable,2025-06-24,Refrigerated,Chennai,0.2,100,2025-07-09,1
+Bread,Bakery,2025-06-15,Ambient,Chennai,26.6,66.1,2025-06-18,1
+Chicken,Meat,2025-06-29,Refrigerated,Delhi,-0.9,91.9,2025-07-08,1
+Fish,Seafood,2025-06-30,Frozen,Kolkata,-18.8,81.6,2025-08-10,0
+Milk,Dairy,2025-06-22,Refrigerated,Delhi,1.4,95.3,2025-07-02,1
+Canned Beans,Pantry,2025-06-28,Ambient,Chennai,17.2,56.0,2027-04-02,0
+Milk,Dairy,2025-07-01,Refrigerated,Delhi,0.1,86.0,2025-07-16,0
+Apple,Fruit,2025-07-08,Refrigerated,Kolkata,3.6,80.4,2025-08-04,0
+Bread,Bakery,2025-07-05,Ambient,Bangalore,19.7,41.9,2025-07-09,0
+Banana,Fruit,2025-06-24,Ambient,Mumbai,23.0,77.9,2025-06-27,1
+Milk,Dairy,2025-06-15,Refrigerated,Mumbai,2.9,84.0,2025-06-30,1
+Milk,Dairy,2025-06-20,Refrigerated,Mumbai,1.0,94.1,2025-07-01,1
+Fish,Seafood,2025-06-25,Frozen,Delhi,-17.2,82.2,2025-08-21,0
+Bread,Bakery,2025-06-15,Ambient,Kolkata,23.9,48.2,2025-06-20,1
+Apple,Fruit,2025-06-30,Refrigerated,Delhi,-0.7,86.9,2025-07-20,0
+Milk,Dairy,2025-06-22,Refrigerated,Chennai,4.1,75.1,2025-07-07,1
+Milk,Dairy,2025-06-27,Refrigerated,Kolkata,2.8,93.6,2025-07-10,1
+Eggs,Dairy,2025-06-26,Refrigerated,Mumbai,3.1,89.8,2025-07-23,1
+Canned Beans,Pantry,2025-07-07,Ambient,Chennai,23.6,45.6,2026-12-28,0
+Chicken,Meat,2025-06-11,Refrigerated,Kolkata,-2.5,93.7,2025-06-18,1
+Apple,Fruit,2025-07-05,Refrigerated,Mumbai,4.3,100,2025-08-01,0
+Chicken,Meat,2025-06-17,Refrigerated,Chennai,1.1,91.8,2025-06-25,1
+Bread,Bakery,2025-06-24,Ambient,Bangalore,30.9,58.8,2025-06-27,0
+Canned Beans,Pantry,2025-07-01,Ambient,Kolkata,9.7,39.4,2027-04-19,0
+Carrots,Vegetable,2025-07-01,Refrigerated,Delhi,6.0,79.7,2025-07-18,1
+Canned Beans,Pantry,2025-07-11,Ambient,Kolkata,29.6,44.9,2026-09-19,0
+Banana,Fruit,2025-06-29,Ambient,Bangalore,16.7,59.9,2025-07-03,1
+Carrots,Vegetable,2025-07-06,Refrigerated,Kolkata,0.9,81.4,2025-08-04,0
+Canned Beans,Pantry,2025-06-13,Ambient,Kolkata,8.9,46.1,2026-12-15,0
+Banana,Fruit,2025-06-14,Ambient,Kolkata,10.3,73.5,2025-06-17,1
+Chicken,Meat,2025-06-12,Refrigerated,Kolkata,-2.4,87.6,2025-06-20,0
+Bread,Bakery,2025-06-24,Ambient,Kolkata,27.8,53.7,2025-06-29,1
+Eggs,Dairy,2025-06-13,Refrigerated,Kolkata,1.7,72.0,2025-07-13,1
+Eggs,Dairy,2025-07-04,Refrigerated,Chennai,0.7,74.6,2025-07-31,0
+Milk,Dairy,2025-07-02,Refrigerated,Kolkata,-2.6,93.2,2025-07-13,0
+Eggs,Dairy,2025-06-22,Refrigerated,Mumbai,2.5,82.3,2025-07-19,0
+Apple,Fruit,2025-06-18,Refrigerated,Chennai,6.6,90.2,2025-07-13,0
+Carrots,Vegetable,2025-07-09,Refrigerated,Chennai,8.2,85.2,2025-07-29,0
+Milk,Dairy,2025-06-24,Refrigerated,Mumbai,2.0,91.5,2025-07-07,0
+Banana,Fruit,2025-07-10,Ambient,Chennai,15.3,59.2,2025-07-17,0
+Fish,Seafood,2025-06-17,Frozen,Delhi,-20.3,93.9,2025-07-28,1
+Ice Cream,FrozenDessert,2025-06-22,Frozen,Chennai,-26.3,42.2,2026-04-28,0
+Banana,Fruit,2025-07-08,Ambient,Bangalore,14.7,73.2,2025-07-11,1
+Apple,Fruit,2025-06-17,Refrigerated,Delhi,-1.1,81.7,2025-07-16,0
+Milk,Dairy,2025-06-22,Refrigerated,Kolkata,4.8,78.6,2025-07-05,1
+Milk,Dairy,2025-06-11,Refrigerated,Delhi,4.8,83.8,2025-06-25,0
+Chicken,Meat,2025-07-09,Refrigerated,Bangalore,4.5,87.9,2025-07-17,0
+Chicken,Meat,2025-06-26,Refrigerated,Mumbai,4.3,86.5,2025-07-03,1
+Canned Beans,Pantry,2025-07-03,Ambient,Mumbai,14.4,42.1,2027-03-14,0
+Fish,Seafood,2025-06-30,Frozen,Delhi,-18.2,86.2,2025-07-30,0
+Chicken,Meat,2025-07-04,Refrigerated,Delhi,-3.3,87.3,2025-07-12,1
+Eggs,Dairy,2025-06-11,Refrigerated,Mumbai,6.6,93.2,2025-07-04,1
+Carrots,Vegetable,2025-06-20,Refrigerated,Delhi,6.9,73.7,2025-07-19,1
+Apple,Fruit,2025-06-29,Refrigerated,Delhi,1.4,95.0,2025-07-28,0
+Apple,Fruit,2025-06-19,Refrigerated,Mumbai,-1.6,99.0,2025-07-14,0
+Canned Beans,Pantry,2025-06-17,Ambient,Delhi,19.3,34.2,2027-04-05,0
+Banana,Fruit,2025-06-16,Ambient,Mumbai,16.0,65.1,2025-06-23,0
+Milk,Dairy,2025-07-10,Refrigerated,Bangalore,3.8,100,2025-07-21,0
+Ice Cream,FrozenDessert,2025-06-20,Frozen,Mumbai,-24.0,55.4,2026-01-13,0
+Milk,Dairy,2025-06-21,Refrigerated,Delhi,-2.3,82.9,2025-07-03,1
+Eggs,Dairy,2025-06-13,Refrigerated,Bangalore,2.0,85.4,2025-07-04,1
+Banana,Fruit,2025-06-20,Ambient,Kolkata,27.3,45.8,2025-06-24,1
+Banana,Fruit,2025-06-13,Ambient,Kolkata,25.5,57.4,2025-06-20,0
+Carrots,Vegetable,2025-07-03,Refrigerated,Mumbai,3.3,71.5,2025-07-23,1
+Banana,Fruit,2025-06-15,Ambient,Delhi,22.8,54.6,2025-06-20,1
+Ice Cream,FrozenDessert,2025-06-29,Frozen,Chennai,-22.4,39.8,2026-05-05,1
+Milk,Dairy,2025-06-17,Refrigerated,Bangalore,1.0,93.5,2025-06-28,1
+Ice Cream,FrozenDessert,2025-06-29,Frozen,Kolkata,-18.6,59.7,2026-03-06,0
+Milk,Dairy,2025-07-02,Refrigerated,Mumbai,-3.0,93.4,2025-07-13,1
+Canned Beans,Pantry,2025-06-15,Ambient,Bangalore,10.9,39.5,2027-04-03,0
+Chicken,Meat,2025-07-07,Refrigerated,Kolkata,4.2,94.9,2025-07-14,0
+Banana,Fruit,2025-06-30,Ambient,Delhi,16.9,68.7,2025-07-05,0
+Canned Beans,Pantry,2025-07-05,Ambient,Mumbai,25.5,35.3,2027-05-31,0
+Ice Cream,FrozenDessert,2025-07-04,Frozen,Bangalore,-20.4,48.2,2026-04-09,0
+Eggs,Dairy,2025-06-16,Refrigerated,Bangalore,4.0,76.4,2025-07-08,1
+Ice Cream,FrozenDessert,2025-06-30,Frozen,Bangalore,-25.0,48.9,2026-03-30,0
+Banana,Fruit,2025-06-23,Ambient,Kolkata,12.6,64.2,2025-06-27,1
+Fish,Seafood,2025-07-11,Frozen,Mumbai,-19.1,100,2025-09-07,1
+Milk,Dairy,2025-06-18,Refrigerated,Kolkata,-0.8,66.3,2025-07-01,1
+Ice Cream,FrozenDessert,2025-06-19,Frozen,Kolkata,-20.7,54.3,2026-03-31,0
+Fish,Seafood,2025-06-17,Frozen,Delhi,-18.0,61.9,2025-07-17,0
+Ice Cream,FrozenDessert,2025-07-08,Frozen,Chennai,-20.3,37.0,2026-04-19,1
+Fish,Seafood,2025-06-12,Frozen,Mumbai,-15.5,62.4,2025-07-22,1
+Canned Beans,Pantry,2025-07-04,Ambient,Delhi,18.3,40.7,2026-11-10,0
+Canned Beans,Pantry,2025-06-13,Ambient,Delhi,17.6,36.7,2026-11-03,0
+Carrots,Vegetable,2025-06-28,Refrigerated,Bangalore,4.7,79.9,2025-07-18,0
+Bread,Bakery,2025-06-25,Ambient,Chennai,20.5,67.4,2025-06-28,0
+Carrots,Vegetable,2025-07-08,Refrigerated,Delhi,-0.7,85.8,2025-08-02,1
+Carrots,Vegetable,2025-06-13,Refrigerated,Bangalore,0.0,93.8,2025-07-01,1
+Canned Beans,Pantry,2025-06-15,Ambient,Chennai,15.5,38.2,2026-07-31,0
+Chicken,Meat,2025-07-07,Refrigerated,Bangalore,3.9,92.0,2025-07-17,0
+Canned Beans,Pantry,2025-07-08,Ambient,Chennai,12.2,26.0,2027-05-01,0
+Bread,Bakery,2025-07-04,Ambient,Delhi,13.6,63.0,2025-07-08,1
+Bread,Bakery,2025-07-08,Ambient,Kolkata,11.0,56.7,2025-07-11,1
+Eggs,Dairy,2025-06-13,Refrigerated,Delhi,2.6,91.4,2025-07-08,1
+Bread,Bakery,2025-06-12,Ambient,Bangalore,23.1,59.7,2025-06-16,1
+Ice Cream,FrozenDessert,2025-07-09,Frozen,Kolkata,-23.2,30.1,2026-06-07,0
+Banana,Fruit,2025-07-07,Ambient,Chennai,13.8,60.7,2025-07-10,1
+Banana,Fruit,2025-06-30,Ambient,Delhi,9.0,62.3,2025-07-04,1
+Fish,Seafood,2025-06-20,Frozen,Bangalore,-20.4,79.9,2025-07-30,0
+Canned Beans,Pantry,2025-06-21,Ambient,Chennai,16.8,46.0,2027-06-19,0
+Fish,Seafood,2025-06-26,Frozen,Mumbai,-16.5,73.3,2025-08-21,0
+Fish,Seafood,2025-07-03,Frozen,Bangalore,-14.9,71.7,2025-08-08,0
+Chicken,Meat,2025-07-10,Refrigerated,Bangalore,6.0,81.7,2025-07-15,0
+Milk,Dairy,2025-06-28,Refrigerated,Chennai,3.3,89.8,2025-07-10,1
+Fish,Seafood,2025-06-17,Frozen,Chennai,-17.4,75.5,2025-07-22,1
+Fish,Seafood,2025-07-11,Frozen,Delhi,-17.1,62.2,2025-09-07,1
+Banana,Fruit,2025-07-10,Ambient,Chennai,12.8,65.3,2025-07-13,1
+Milk,Dairy,2025-06-16,Refrigerated,Bangalore,4.3,95.7,2025-06-26,0
+Fish,Seafood,2025-06-12,Frozen,Delhi,-16.0,62.5,2025-08-08,1
+Bread,Bakery,2025-06-24,Ambient,Bangalore,24.4,73.3,2025-06-29,1
+Banana,Fruit,2025-06-19,Ambient,Kolkata,21.6,63.7,2025-06-23,0
+Banana,Fruit,2025-06-16,Ambient,Mumbai,9.9,67.0,2025-06-20,1
+Ice Cream,FrozenDessert,2025-06-12,Frozen,Bangalore,-22.4,64.6,2026-04-09,0
+Bread,Bakery,2025-06-14,Ambient,Chennai,18.9,55.1,2025-06-17,1
+Carrots,Vegetable,2025-07-06,Refrigerated,Delhi,3.7,84.7,2025-08-02,0
+Fish,Seafood,2025-06-30,Frozen,Delhi,-17.7,100,2025-08-14,1
+Apple,Fruit,2025-06-23,Refrigerated,Delhi,3.7,88.1,2025-07-14,0
+Apple,Fruit,2025-07-03,Refrigerated,Chennai,4.2,82.5,2025-07-30,0
+Carrots,Vegetable,2025-06-16,Refrigerated,Chennai,-3.7,82.9,2025-07-15,1
+Chicken,Meat,2025-06-22,Refrigerated,Delhi,2.5,98.5,2025-06-27,1
+Milk,Dairy,2025-06-21,Refrigerated,Delhi,-1.6,86.4,2025-07-06,0
+Milk,Dairy,2025-06-22,Refrigerated,Delhi,0.5,94.0,2025-07-02,0
+Ice Cream,FrozenDessert,2025-06-18,Frozen,Kolkata,-26.7,48.3,2026-02-08,0
+Banana,Fruit,2025-07-09,Ambient,Kolkata,14.8,52.0,2025-07-13,0
+Fish,Seafood,2025-07-11,Frozen,Mumbai,-21.0,65.1,2025-08-14,0
+Banana,Fruit,2025-07-05,Ambient,Kolkata,13.3,71.9,2025-07-12,1
+Chicken,Meat,2025-06-12,Refrigerated,Delhi,-0.8,97.3,2025-06-17,0
+Milk,Dairy,2025-06-29,Refrigerated,Delhi,-2.6,98.0,2025-07-14,0
+Apple,Fruit,2025-07-05,Refrigerated,Delhi,5.4,78.8,2025-07-30,1
+Milk,Dairy,2025-07-01,Refrigerated,Chennai,-4.7,98.6,2025-07-14,1
+Fish,Seafood,2025-07-03,Frozen,Kolkata,-20.0,77.5,2025-08-11,0
+Apple,Fruit,2025-07-03,Refrigerated,Kolkata,6.2,94.8,2025-07-28,0
+Ice Cream,FrozenDessert,2025-07-08,Frozen,Kolkata,-22.2,58.8,2026-02-24,0
+Chicken,Meat,2025-06-18,Refrigerated,Delhi,2.6,89.3,2025-06-28,0
+Banana,Fruit,2025-06-16,Ambient,Mumbai,20.2,76.5,2025-06-22,1
+Apple,Fruit,2025-07-10,Refrigerated,Chennai,5.3,77.6,2025-08-01,0
