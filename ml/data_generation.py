@@ -99,6 +99,14 @@ def generate_inventory_data(num_rows=500):
     inventory_data = []
     current_date = datetime.now()
 
+    # Define target distribution of warning levels
+    warning_level_distribution = {
+        'good': 0.60,     # 60% fresh items
+        'monitor': 0.25,  # 25% items to monitor
+        'warning': 0.10,  # 10% items needing attention
+        'critical': 0.05  # 5% critical items (but not expired)
+    }
+
     for i in range(num_rows):
         # Product selection with seasonal weighting
         season, season_details = get_current_season(current_date)
@@ -124,16 +132,36 @@ def generate_inventory_data(num_rows=500):
         lat = location_details["lat"] + random.uniform(-0.05, 0.05)
         lon = location_details["lon"] + random.uniform(-0.05, 0.05)
 
-        # More realistic stock date generation based on product type and store profile
-        max_stock_age = 7 if category in ["Bakery", "Dairy"] else 30
-        stock_days_ago = int(random.triangular(0, max_stock_age, max_stock_age * 0.3))
-        stock_date = current_date - timedelta(days=stock_days_ago)
-        
-        # Shelf life calculation with store quality influence
+        # Determine target warning level based on distribution
+        rand_val = random.random()
+        cum_prob = 0
+        target_warning_level = 'good'
+        for level, prob in warning_level_distribution.items():
+            cum_prob += prob
+            if rand_val <= cum_prob:
+                target_warning_level = level
+                break
+
+        # Calculate stock and expiry dates based on target warning level
         shelf_min, shelf_max = profile["shelf_life_days"]
-        quality_modifier = STORE_PROFILES[store_profile]["equipment_quality"][0] / 5.0
-        adjusted_shelf_life = int(random.uniform(shelf_min, shelf_max) * quality_modifier)
-        expiry_date = stock_date + timedelta(days=adjusted_shelf_life)
+        total_shelf_life = random.randint(shelf_min, shelf_max)
+        
+        if target_warning_level == 'good':
+            # Fresh items: Used 0-30% of shelf life
+            used_fraction = random.uniform(0, 0.3)
+        elif target_warning_level == 'monitor':
+            # Monitor items: Used 31-60% of shelf life
+            used_fraction = random.uniform(0.31, 0.6)
+        elif target_warning_level == 'warning':
+            # Warning items: Used 61-80% of shelf life
+            used_fraction = random.uniform(0.61, 0.8)
+        else:  # critical
+            # Critical items: Used 81-95% of shelf life (not expired)
+            used_fraction = random.uniform(0.81, 0.95)
+
+        days_used = int(total_shelf_life * used_fraction)
+        stock_date = current_date - timedelta(days=days_used)
+        expiry_date = stock_date + timedelta(days=total_shelf_life)
 
         # Generate environmental conditions with seasonal and store quality effects
         temp, hum = generate_environmental_conditions(profile, store_profile, current_date)
