@@ -1,6 +1,6 @@
 import pandas as pd
 from datetime import datetime, timedelta
-from logistics import calculate_distance, estimate_co2_savings
+from backend.utils import calculate_distance, estimate_co2_savings
 import logging
 
 # --- CONFIGURATION ---
@@ -146,19 +146,7 @@ def calculate_freshness(stock_date_str, expiry_date_str, category=None):
     
     return freshness_score, warning_level, days_remaining
 
-def find_best_matches(item, ngos_df):
-    """
-    Finds the best NGO matches for a given item using a sophisticated matching algorithm.
-
-    Args:
-        item (pd.Series): A pandas Series object representing the item to redistribute.
-        ngos_df (pd.DataFrame): A DataFrame containing all NGO data.
-
-    Returns:
-        tuple: (matches, stats)
-            - matches: list of matched NGOs with scores and details
-            - stats: dict containing matching statistics and recommendations
-    """
+# Global function removed as it's now a class method
     logger.info(f"Finding matches for {item['product_name']} (ID: {item['product_id']})")
     
     # Get category-specific constraints
@@ -428,7 +416,7 @@ class RedistributionEngine:
             }
         
         # Find and analyze matches
-        matches, match_stats = find_best_matches(item, self.ngos_df)
+        matches, match_stats = self.find_best_matches(item)
         
         # Update monitoring stats
         self.stats["total_items_processed"] += 1
@@ -453,6 +441,131 @@ class RedistributionEngine:
                 "days_remaining": days_remaining
             }
         }
+
+    def find_best_matches(self, item):
+        """
+        Finds the best NGO matches for a given item using a sophisticated matching algorithm.
+
+        Args:
+            item (pd.Series or dict): A pandas Series object or dictionary representing the item to redistribute.
+
+        Returns:
+            tuple: (matches, stats)
+                - matches: list of matched NGOs with scores and details
+                - stats: dict containing matching statistics and recommendations
+        """
+        logger.info(f"Finding matches for {item['product_name']} (ID: {item['product_id']})")
+        
+        # Get category-specific constraints
+        constraints = CATEGORY_CONSTRAINTS.get(item['category'], DEFAULT_CONSTRAINTS)
+        
+        # Check if item meets minimum redistribution criteria
+        freshness_score, warning_level, days_remaining = calculate_freshness(
+            item['stock_date'], 
+            item['expiry_date'],
+            item['category']
+        )
+        
+        if (freshness_score < constraints['min_freshness'] or 
+            days_remaining < constraints['min_days']):
+            logger.warning(
+                f"Item {item['product_id']} does not meet minimum criteria for redistribution: "
+                f"freshness={freshness_score:.1f}%, days_remaining={days_remaining}"
+            )
+            return [], {
+                "status": "not_redistributable",
+                "reason": "below_minimum_criteria",
+                "details": {
+                    "freshness": freshness_score,
+                    "days_remaining": days_remaining,
+                    "min_freshness_required": constraints['min_freshness'],
+                    "min_days_required": constraints['min_days']
+                }
+            }
+        
+        # 1. Filter NGOs that accept the item's category
+        compatible_ngos = self.ngos_df[self.ngos_df['accepted_categories'].str.contains(item['category'])]
+
+        if compatible_ngos.empty:
+            logger.warning(f"No compatible NGOs found for category: {item['category']}")
+            return [], {"status": "no_matches", "reason": "category_incompatible"}
+
+        # 2. Calculate comprehensive matching scores
+        matches = []
+        total_capacity = 0
+        max_distance = constraints['max_distance_km']
+        
+        for _, ngo in compatible_ngos.iterrows():
+            # Calculate base metrics
+            dist = calculate_distance(
+                item['latitude'], item['longitude'],
+                ngo['latitude'], ngo['longitude']
+            )
+            
+            # Skip NGOs that are too far away
+            if dist > max_distance:
+                continue
+                
+            co2_saved = estimate_co2_savings(dist)
+            
+            # Calculate specialized scores
+            # Distance score now considers category-specific max distance
+            distance_score = 1 - (dist / max_distance)
+            
+            # Improved capacity scoring
+            # Consider both absolute capacity and available capacity percentage
+            min_required_capacity = 10  # Minimum kg capacity needed
+            capacity_score = min(1.0, (ngo['capacity_kg'] - min_required_capacity) / 200)
+            
+            # Calculate category focus score with diminishing returns
+            category_count = len(ngo['accepted_categories'].split('|'))
+            category_focus_score = 1 / (1 + 0.2 * category_count)  # Steeper penalty for too many categories
+            
+            # Additional scoring factors
+            urgency_multiplier = 1.2 if warning_level == 'critical' else 1.0
+            
+            # Weighted combination of scores with urgency multiplier
+            match_score = urgency_multiplier * (
+                MATCHING_WEIGHTS['distance'] * distance_score +
+                MATCHING_WEIGHTS['capacity'] * capacity_score +
+                MATCHING_WEIGHTS['category_focus'] * category_focus_score
+            )
+
+            ngo_match = ngo.to_dict()
+            ngo_match.update({
+                'distance_km': round(dist, 2),
+                'co2_savings_kg': round(co2_saved, 2),
+                'match_score': round(match_score, 4),
+                'distance_score': round(distance_score, 4),
+                'capacity_score': round(capacity_score, 4),
+                'category_focus_score': round(category_focus_score, 4)
+            })
+            matches.append(ngo_match)
+            total_capacity += ngo['capacity_kg']
+
+        # 3. Sort matches by score in descending order
+        matches.sort(key=lambda x: x['match_score'], reverse=True)
+
+        # 4. Calculate matching statistics
+        stats = {
+            "status": "matches_found",
+            "total_matches": len(matches),
+            "total_capacity_kg": total_capacity,
+            "avg_distance_km": sum(m['distance_km'] for m in matches) / len(matches) if matches else 0,
+            "total_potential_co2_savings": sum(m['co2_savings_kg'] for m in matches),
+            "recommendation": "proceed" if len(matches) > 0 else "expand_search"
+        }
+
+        # Add time-sensitivity based recommendations
+        stats.update({
+            "item_freshness": round(freshness_score, 2),
+            "warning_level": warning_level,
+            "days_remaining": days_remaining,
+            "urgency": "high" if warning_level in ['critical', 'warning'] else "medium"
+        })
+
+        logger.info(f"Found {len(matches)} potential matches for {item['product_name']}")
+        return matches, stats
 
 # --- EXAMPLE USAGE ---
 
